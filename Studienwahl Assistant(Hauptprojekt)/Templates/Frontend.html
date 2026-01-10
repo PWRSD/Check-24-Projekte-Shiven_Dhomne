@@ -5,7 +5,6 @@
 <title>Studienauswahl Assistent</title>
 
 <style>
-/* layout */
 :root {
     --bg:#020617;
     --panel:#0b1220;
@@ -16,7 +15,6 @@
     --muted:#8b949e;
 }
 
-/* reset */
 * { box-sizing:border-box; }
 
 body {
@@ -31,7 +29,6 @@ body {
     padding:60px 20px;
 }
 
-/* title */
 h1 {
     font-size:3rem;
     font-weight:800;
@@ -39,7 +36,6 @@ h1 {
     text-align:center;
 }
 
-/* container */
 .app {
     width:100%;
     max-width:900px;
@@ -50,7 +46,6 @@ h1 {
     overflow:hidden;
 }
 
-/* animation */
 .slide { animation:in 0.4s ease; }
 .slide-back { animation:back 0.4s ease; }
 
@@ -64,7 +59,6 @@ h1 {
     to { opacity:1; transform:translateX(0); }
 }
 
-/* progress */
 .counter { color:var(--muted); }
 
 .progress {
@@ -81,7 +75,6 @@ h1 {
     transition:width 0.3s ease;
 }
 
-/* content */
 .question {
     font-size:2.1rem;
     font-weight:700;
@@ -93,7 +86,6 @@ h1 {
     gap:20px;
 }
 
-/* choice */
 .answer {
     padding:22px;
     background:var(--panel-soft);
@@ -122,14 +114,12 @@ h1 {
     color:var(--muted);
 }
 
-/* nav */
 .controls {
     display:flex;
     justify-content:space-between;
     margin-top:40px;
 }
 
-/* buttons */
 button {
     background:none;
     border:1px solid #334155;
@@ -149,7 +139,6 @@ button:disabled {
     cursor:not-allowed;
 }
 
-/* cards */
 .card {
     background:var(--panel-soft);
     border-radius:18px;
@@ -158,7 +147,6 @@ button:disabled {
     border:1px solid #1f2937;
 }
 
-/* result */
 .confidence {
     color:var(--accent);
     font-weight:700;
@@ -173,14 +161,12 @@ button:disabled {
 
 <body>
 
-<!-- title -->
 <h1>Studienauswahl Assistent</h1>
 
-<!-- app -->
 <div class="app" id="app"></div>
 
 <script>
-// data
+// ---------------- DATA ----------------
 const fragen = [
     { key:"math", text:"Wie gerne löst du logische oder analytische Probleme?", answers:[["1","Gar nicht","Ich meide logische Aufgaben"],["2","Teilweise","Ich komme damit klar"],["3","Sehr gerne","Ich liebe Denkaufgaben"]] },
     { key:"math", text:"Wie sicher fühlst du dich im Umgang mit Zahlen oder Daten?", answers:[["1","Unsicher","Zahlen fallen mir schwer"],["2","Okay","Grundlagen sind machbar"],["3","Sehr sicher","Ich arbeite gerne mit Daten"]] },
@@ -194,14 +180,41 @@ const fragen = [
     { key:"stress", text:"Wie kommst du mit Deadlines klar?", answers:[["1","Überfordert","Sehr belastend"],["2","Akzeptabel","Mit Mühe"],["3","Sehr gut","Motivierend"]] }
 ];
 
-// state
+// ---------------- STATE ----------------
 let antworten = {};
 let index = 0;
 let richtung = "forward";
+let started = false;
 
 const app = document.getElementById("app");
 
-// render
+// ---------------- WELCOME ----------------
+function welcome() {
+    app.className = "app slide";
+    app.innerHTML = `
+        <div class="question">Willkommen beim Studienauswahl-Assistenten</div>
+
+        <div class="card explanation">
+            Dieser Test unterstützt dich dabei, Studienrichtungen zu finden,
+            die zu deinen Interessen, Stärken und Erwartungen passen.
+            <br><br>
+            Du beantwortest <strong>${fragen.length} Fragen</strong>.
+        </div>
+
+        <div class="controls">
+            <span></span>
+            <button class="primary" onclick="startTest()">Test starten</button>
+        </div>
+    `;
+}
+
+function startTest() {
+    started = true;
+    index = 0;
+    anzeigen();
+}
+
+// ---------------- RENDER QUESTIONS ----------------
 function anzeigen() {
     const f = fragen[index];
     const selected = antworten[index] ?? null;
@@ -210,7 +223,9 @@ function anzeigen() {
 
     app.innerHTML = `
         <div class="counter">Frage ${index + 1} von ${fragen.length}</div>
-        <div class="progress"><div class="progress-bar" style="width:${(index / fragen.length) * 100}%"></div></div>
+        <div class="progress">
+            <div class="progress-bar" style="width:${(index / fragen.length) * 100}%"></div>
+        </div>
         <div class="question">${f.text}</div>
         <div class="answers">
             ${f.answers.map(a => `
@@ -226,13 +241,12 @@ function anzeigen() {
     `;
 }
 
-// select
+// ---------------- LOGIC ----------------
 function waehlen(v) {
     antworten[index] = v;
     anzeigen();
 }
 
-// next
 function weiter() {
     if (antworten[index] == null) return;
     richtung = "forward";
@@ -240,14 +254,13 @@ function weiter() {
     index < fragen.length ? anzeigen() : senden();
 }
 
-// back
 function zurueck() {
     richtung = "back";
     index--;
     anzeigen();
 }
 
-// submit
+// ---------------- SUBMIT ----------------
 function senden() {
     const payload = {};
     fragen.forEach((f, i) => payload[f.key] = Number(antworten[i]));
@@ -261,9 +274,12 @@ function senden() {
     .then(zeigen);
 }
 
-// result
+// ---------------- RESULT ----------------
 function zeigen(data) {
-    const ranking = Object.entries(data.scores).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const ranking = Object.entries(data.scores)
+        .sort((a,b)=>b[1]-a[1])
+        .slice(0,3);
+
     const top = ranking[0][1];
     const base = Math.min(95, Math.round((top / 18) * 100));
 
@@ -280,8 +296,8 @@ function zeigen(data) {
     `;
 }
 
-// init
-anzeigen();
+// ---------------- INIT ----------------
+welcome();
 </script>
 
 </body>

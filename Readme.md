@@ -10,7 +10,7 @@ Dieses Repository enthält drei selbstständig entwickelte Projekte, die ich als
 
 ## Enthaltene Projekte
 
-### 1. Studienwahl-Assistent *(Hauptprojekt)*
+### 1. Studienwahl-Assistent 
 
 Ein interaktiver Web-Assistent, der Schüler:innen bei der Entscheidung für ein Studium unterstützt.
 
@@ -30,7 +30,7 @@ Python (Flask), HTML, CSS, JavaScript
 📁 Ordner: `Studienwahl Assistent (Hauptprojekt)`
 
 
-### 2. Taxi-Problem – Reinforcement-Learning-KI-Agent *(Hauptprojekt)*
+### 2. Taxi-Problem – Reinforcement-Learning-KI-Agent 
 
 Ein Lernprojekt aus dem Bereich **Künstliche Intelligenz**, bei dem ein Taxi-Agent durch Ausprobieren lernt, einen Passagier sicher an sein Ziel zu bringen.
 
@@ -50,8 +50,7 @@ Python, Gymnasium, NumPy, Tkinter
 📁 Ordner: `Taxi Problem Reinforcement Learning KI-Agent (Hauptprojekt)`
 
 
-### 3. Labyrinth Escape *(Spielprojekt)*
-
+### 3. Labyrinth Escape 
 Ein selbst programmiertes Labyrinth-Spiel, bei dem der Spieler Hindernissen ausweichen, Münzen sammeln und schließlich das Ziel erreichen muss.
 
 Das Projekt verbindet **logisches Denken**, **klassische Spielmechaniken** und eine **klare, saubere Code-Struktur**.
