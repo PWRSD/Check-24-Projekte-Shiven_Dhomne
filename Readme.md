@@ -1,0 +1,110 @@
+# CHECK24-Projekte – Shiven Dhomne
+
+*Sammlung eigener Softwareprojekte zur Studien- und Berufsorientierung*
+
+## Überblick
+
+Dieses Repository enthält **drei eigenständig entwickelte Projekte**, die während meiner Schulzeit entstanden sind.
+Alle Projekte beschäftigen sich auf unterschiedliche Weise mit **Entscheidungen, Logik, Lernen und Nutzerführung**.
+
+Jedes Projekt wurde vollständig selbst umgesetzt – von der Idee über die Logik bis zur Umsetzung im Code.
+Sie zeigen meine Interessen an **Informatik**, **Problemlösung** und **praktischer Anwendung von Theorie**.
+
+
+
+## Enthaltene Projekte
+
+### 1. Studienwahl-Assistent *(Hauptprojekt)*
+
+Ein interaktiver Web-Assistent, der Schüler:innen bei der Studienwahl unterstützt.
+
+Der Nutzer beantwortet mehrere Fragen zu Interessen, Stärken und Erwartungen.
+Auf Basis dieser Antworten werden passende Studienrichtungen vorgeschlagen und verständlich begründet.
+
+**Schwerpunkte:**
+
+* Entscheidungslogik
+* Nutzerführung
+* Transparente Auswertung
+* Frontend- und Backend-Zusammenspiel
+
+**Technik:**
+Python (Flask), HTML, CSS, JavaScript
+
+📁 Ordner: `Studienwahl Assistent (Hauptprojekt)`
+
+
+
+### 2. Taxi-Problem – Reinforcement Learning KI-Agent *(Hauptprojekt)*
+
+Ein Lernprojekt aus dem Bereich **Künstliche Intelligenz**.
+Ein Taxi-Agent lernt durch Ausprobieren, einen Passagier sicher an sein Ziel zu bringen.
+
+Das Verhalten des Agenten wird über eine grafische Oberfläche sichtbar gemacht.
+Dabei wird bewusst gezeigt, dass Lernen Zeit braucht und Fehler dazugehören.
+
+**Schwerpunkte:**
+
+* Reinforcement Learning
+* Q-Learning
+* Analyse von Lernverhalten
+* Visualisierung von Algorithmen
+
+**Technik:**
+Python, Gymnasium, NumPy, Tkinter
+
+📁 Ordner: `Taxi Problem Reinforcement Learning KI-Agent (Hauptprojekt)`
+
+
+
+### 3. Labyrinth Escape *(Spielprojekt)*
+
+Ein selbst programmiertes Labyrinth-Spiel, bei dem der Spieler Hindernissen ausweichen, Münzen sammeln und das Ziel erreichen muss.
+
+Das Projekt verbindet **logisches Denken**, **Spielmechaniken** und **saubere Struktur im Code**.
+
+**Schwerpunkte:**
+
+* Spielzustände
+* Kollisionserkennung
+* Nutzerinteraktion
+* saubere Programmstruktur
+
+**Technik:**
+Python, Arcade
+
+📁 Ordner: `Maze Spiel`
+
+
+
+## Warum diese Projekte zusammengehören
+
+Alle drei Projekte beschäftigen sich mit einer gemeinsamen Idee:
+
+> **Wie können Entscheidungen – von Menschen oder Maschinen – sinnvoll getroffen und verbessert werden?**
+
+* Der Studienwahl-Assistent unterstützt menschliche Entscheidungen
+* Der KI-Agent lernt aus Erfahrung
+* Das Spiel fordert logisches Denken und Planung
+
+Sie zeigen unterschiedliche Perspektiven auf Problemlösung, aber mit dem gleichen Anspruch:
+**verständlich, strukturiert und nachvollziehbar**.
+
+
+## Persönliches Ziel
+
+Dieses Repository ist kein fertiges Produkt, sondern eine **Sammlung meines Lernwegs**.
+Es zeigt, wie ich mich mit neuen Themen auseinandersetze, Probleme analysiere und eigenständig Lösungen entwickle.
+
+Ich möchte meine Begeisterung für Informatik weiter vertiefen und sehe das CHECK24-Stipendium als große Chance, diesen Weg weiterzugehen.
+
+
+
+## Hinweis
+
+Jedes Projekt enthält ein eigenes `README.md` mit:
+
+* genauer Erklärung
+* Motivation
+* Funktionsweise
+* persönlichen Lernzielen
