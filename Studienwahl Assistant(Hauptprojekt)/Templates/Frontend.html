@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Studienauswahl Assistent</title>
+
+<style>
+/* layout */
+:root {
+    --bg:#020617;
+    --panel:#0b1220;
+    --panel-soft:#111827;
+    --accent:#58a6ff;
+    --accent-soft:#1f6feb;
+    --text:#e6edf3;
+    --muted:#8b949e;
+}
+
+/* reset */
+* { box-sizing:border-box; }
+
+body {
+    margin:0;
+    font-family:Inter, system-ui, sans-serif;
+    background:radial-gradient(circle at top,#111827,#020617);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:60px 20px;
+}
+
+/* title */
+h1 {
+    font-size:3rem;
+    font-weight:800;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+/* container */
+.app {
+    width:100%;
+    max-width:900px;
+    background:var(--panel);
+    border-radius:26px;
+    padding:48px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.7);
+    overflow:hidden;
+}
+
+/* animation */
+.slide { animation:in 0.4s ease; }
+.slide-back { animation:back 0.4s ease; }
+
+@keyframes in {
+    from { opacity:0; transform:translateX(60px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+@keyframes back {
+    from { opacity:0; transform:translateX(-60px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+/* progress */
+.counter { color:var(--muted); }
+
+.progress {
+    height:8px;
+    background:#020617;
+    border-radius:8px;
+    overflow:hidden;
+    margin:20px 0 40px;
+}
+
+.progress-bar {
+    height:100%;
+    background:linear-gradient(90deg,var(--accent),var(--accent-soft));
+    transition:width 0.3s ease;
+}
+
+/* content */
+.question {
+    font-size:2.1rem;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.answers {
+    display:grid;
+    gap:20px;
+}
+
+/* choice */
+.answer {
+    padding:22px;
+    background:var(--panel-soft);
+    border:1px solid #1f2937;
+    border-radius:18px;
+    cursor:pointer;
+    transition:0.15s ease;
+}
+
+.answer:hover {
+    border-color:var(--accent);
+    transform:translateY(-2px);
+}
+
+.answer.selected {
+    border-color:var(--accent);
+    background:rgba(88,166,255,0.15);
+}
+
+.answer strong {
+    font-size:1.2rem;
+    display:block;
+}
+
+.answer span {
+    color:var(--muted);
+}
+
+/* nav */
+.controls {
+    display:flex;
+    justify-content:space-between;
+    margin-top:40px;
+}
+
+/* buttons */
+button {
+    background:none;
+    border:1px solid #334155;
+    color:var(--text);
+    padding:14px 26px;
+    border-radius:14px;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+button.primary {
+    border-color:var(--accent);
+}
+
+button:disabled {
+    opacity:0.4;
+    cursor:not-allowed;
+}
+
+/* cards */
+.card {
+    background:var(--panel-soft);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:16px;
+    border:1px solid #1f2937;
+}
+
+/* result */
+.confidence {
+    color:var(--accent);
+    font-weight:700;
+}
+
+.explanation {
+    color:var(--muted);
+    line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- title -->
+<h1>Studienauswahl-Assistent</h1>
+
+<!-- app -->
+<div class="app" id="app"></div>
+
+<script>
+// data
+const fragen = [
+    { key:"math", text:"Wie gerne löst du logische oder analytische Probleme?", answers:[["1","Gar nicht","Ich meide logische Aufgaben"],["2","Teilweise","Ich komme damit klar"],["3","Sehr gerne","Ich liebe Denkaufgaben"]] },
+    { key:"math", text:"Wie sicher fühlst du dich im Umgang mit Zahlen oder Daten?", answers:[["1","Unsicher","Zahlen fallen mir schwer"],["2","Okay","Grundlagen sind machbar"],["3","Sehr sicher","Ich arbeite gerne mit Daten"]] },
+    { key:"people", text:"Wie wichtig ist dir die Arbeit mit anderen Menschen?", answers:[["1","Unwichtig","Ich arbeite lieber allein"],["2","Ausgeglichen","Eine Mischung passt"],["3","Sehr wichtig","Ich brauche viel Austausch"]] },
+    { key:"people", text:"Hast du Freude an Kommunikation oder Teamarbeit?", answers:[["1","Eher nicht","So wenig wie möglich"],["2","Manchmal","Situationsabhängig"],["3","Sehr","Ich blühe dabei auf"]] },
+    { key:"study", text:"Wie stehst du zu langen Studienwegen?", answers:[["1","Negativ","Ich bevorzuge kurze Wege"],["2","Neutral","Wenn nötig"],["3","Positiv","Kein Problem"]] },
+    { key:"study", text:"Wie gut kannst du langfristig diszipliniert lernen?", answers:[["1","Schwer","Konstanz fällt mir schwer"],["2","Machbar","Mit Struktur"],["3","Sehr gut","Sehr konsequent"]] },
+    { key:"theory", text:"Magst du abstrakte und theoretische Inhalte?", answers:[["1","Nein","Lieber praktisch"],["2","Teilweise","Beides geht"],["3","Ja","Sehr interessant"]] },
+    { key:"salary", text:"Wie wichtig ist dir ein hohes Einkommen?", answers:[["1","Unwichtig","Erfüllung zählt"],["2","Mittel","Ganz nett"],["3","Sehr wichtig","Hohe Priorität"]] },
+    { key:"stress", text:"Wie gehst du mit Druck um?", answers:[["1","Schlecht","Ich meide Stress"],["2","Okay","Ich komme zurecht"],["3","Sehr gut","Ich funktioniere gut"]] },
+    { key:"stress", text:"Wie kommst du mit Deadlines klar?", answers:[["1","Überfordert","Sehr belastend"],["2","Akzeptabel","Mit Mühe"],["3","Sehr gut","Motivierend"]] }
+];
+
+// state
+let antworten = {};
+let index = 0;
+let richtung = "forward";
+
+const app = document.getElementById("app");
+
+// render
+function anzeigen() {
+    const f = fragen[index];
+    const selected = antworten[index] ?? null;
+
+    app.className = "app " + (richtung === "back" ? "slide-back" : "slide");
+
+    app.innerHTML = `
+        <div class="counter">Frage ${index + 1} von ${fragen.length}</div>
+        <div class="progress"><div class="progress-bar" style="width:${(index / fragen.length) * 100}%"></div></div>
+        <div class="question">${f.text}</div>
+        <div class="answers">
+            ${f.answers.map(a => `
+                <div class="answer ${selected == a[0] ? "selected" : ""}" onclick="waehlen(${a[0]})">
+                    <strong>${a[1]}</strong><span>${a[2]}</span>
+                </div>
+            `).join("")}
+        </div>
+        <div class="controls">
+            ${index > 0 ? `<button onclick="zurueck()">Zurück</button>` : `<span></span>`}
+            <button class="primary" onclick="weiter()" ${selected ? "" : "disabled"}>Weiter</button>
+        </div>
+    `;
+}
+
+// select
+function waehlen(v) {
+    antworten[index] = v;
+    anzeigen();
+}
+
+// next
+function weiter() {
+    if (antworten[index] == null) return;
+    richtung = "forward";
+    index++;
+    index < fragen.length ? anzeigen() : senden();
+}
+
+// back
+function zurueck() {
+    richtung = "back";
+    index--;
+    anzeigen();
+}
+
+// submit
+function senden() {
+    const payload = {};
+    fragen.forEach((f, i) => payload[f.key] = Number(antworten[i]));
+
+    fetch("/evaluate", {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body:JSON.stringify(payload)
+    })
+    .then(r => r.json())
+    .then(zeigen);
+}
+
+// result
+function zeigen(data) {
+    const ranking = Object.entries(data.scores).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const top = ranking[0][1];
+    const base = Math.min(95, Math.round((top / 18) * 100));
+
+    app.innerHTML = `
+        <h2>Deine besten Studienrichtungen</h2>
+        ${ranking.map(([n,s],i)=>`
+            <div class="card">
+                <strong>${i+1}. ${n}</strong><br>
+                <span class="confidence">Übereinstimmung: ${Math.round((s / top) * base)}%</span>
+            </div>
+        `).join("")}
+        <div class="card explanation">${data.explanation}</div>
+        <button onclick="location.reload()">Neu starten</button>
+    `;
+}
+
+// init
+anzeigen();
+</script>
+
+</body>
+</html>
