@@ -181,7 +181,7 @@ class GameView(arcade.View):
         # Kollision mit Blöcken prüfen
         blocks_hit = arcade.check_for_collision_with_list(self.circle, self.block_liste)
         for block in blocks_hit:
-            # Reaktion je nach Typ des Blocks (mit hasattr sicherstellen, dass "type" existiert)
+            # Reaktion je nach Typ des Blocks (mit hasattr sicherstellen, dass "type" existiert.)
             if hasattr(block, "type"):
                 if block.type == "end":
                     if self.music_player:

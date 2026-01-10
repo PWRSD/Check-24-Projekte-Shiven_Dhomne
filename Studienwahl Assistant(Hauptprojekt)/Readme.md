@@ -122,7 +122,7 @@ In Zukunft könnte das Projekt erweitert werden, zum Beispiel durch:
 ## Persönliche Anmerkung
 
 Dieses Projekt steht für meine Neugier, meinen Lernwillen und mein Interesse an Technik und sinnvollen Anwendungen.
-Es zeigt, wie ich versuche, reale Probleme mit Software zu lösen – auch schon während meiner Schulzeit.
+Es zeigt, wie ich versuche, reale Probleme mit Software zu lösen auch schon während meiner Schulzeit.
 
 
 

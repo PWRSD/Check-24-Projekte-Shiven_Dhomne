@@ -53,7 +53,7 @@ Die Steuerung ist bewusst einfach gehalten, damit der Fokus auf dem Spiel selbst
 * Beim Start erscheint ein Startbildschirm
 * Danach beginnt das eigentliche Spiel
 * Berührt man einen gefährlichen Block, ist das Spiel sofort vorbei
-* Erreicht man das Ziel, gewinnt man
+* Erreicht man das Ziel, gewinnt man das Spiel
 * Am Ende werden **Zeit** und **gesammelte Münzen** angezeigt
 
 So bekommt man direkt Feedback über seine Leistung.

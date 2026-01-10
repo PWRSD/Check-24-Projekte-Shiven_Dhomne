@@ -196,7 +196,7 @@ def play():
 # Buttons
 btn = dict(font=("Segoe UI", 11), padx=12, pady=6)
 tk.Button(root, text="▶ Start", command=play, bg="#2E7D32", fg="white", **btn).pack(pady=4)
-tk.Button(root, text="⟳ Neue Wände(Reset)", command=lambda: globals().update(walls=generate_random_walls()), **btn).pack()
-tk.Button(root, text="⟳ Q-Tabelle retrainen(Retrain)", command=lambda: globals().update(Q=train_q()), **btn).pack(pady=(0,10))
+tk.Button(root, text="⟳ Neue Wände (Reset)", command=lambda: globals().update(walls=generate_random_walls()), **btn).pack()
+tk.Button(root, text="⟳ Q-Tabelle retrainen (Retrain)", command=lambda: globals().update(Q=train_q()), **btn).pack(pady=(0,10))
 
 root.mainloop()

@@ -122,7 +122,7 @@ Durch dieses Projekt habe ich verstanden:
 ## Persönliche Anmerkung
 
 Dieses Projekt ist bewusst **nicht perfekt**, sondern realistisch.
-Es zeigt, dass Lernen – sowohl bei Menschen als auch bei Maschinen – ein Prozess ist, der Zeit, Geduld und Analyse erfordert.
+Es zeigt, dass Lernen sowohl bei Menschen als auch bei Maschinen ein Prozess ist, der Zeit, Geduld und Analyse erfordert.
 
 Genau diese Herangehensweise möchte ich auch in Zukunft weiterentwickeln.
 

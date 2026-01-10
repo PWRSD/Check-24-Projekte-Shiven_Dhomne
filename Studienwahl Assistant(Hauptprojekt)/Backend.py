@@ -33,7 +33,7 @@ def bewertung(a, b):
         return 1
     return -2
 
-# begruendung
+# Begruendung
 def begruendung(antworten, scores):
     best = max(scores, key=scores.get)
     passend = []
