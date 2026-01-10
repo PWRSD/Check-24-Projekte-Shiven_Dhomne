@@ -120,10 +120,6 @@ Durch dieses Projekt habe ich verstanden:
 * wie man komplexe Algorithmen verständlich visualisiert
 
 ## Persönliche Anmerkung
-
-Dieses Projekt ist bewusst **nicht perfekt**, sondern realistisch.
-Es zeigt, dass Lernen sowohl bei Menschen als auch bei Maschinen ein Prozess ist, der Zeit, Geduld und Analyse erfordert.
-
-Genau diese Herangehensweise möchte ich auch in Zukunft weiterentwickeln.
+Durch dieses Projekt habe ich viel über die Grundlagen von Reinforcement Learning gelernt und die Prozesse hinter einem KI-Agenten verstanden. Dies war einer meiner schwierigsten Projekte, trotz dessen hat es Spaß gemacht.
 
 

@@ -4,13 +4,7 @@
 
 ## Überblick
 
-Dieses Repository enthält **drei eigenständig entwickelte Projekte**, die während meiner Schulzeit entstanden sind.
-Alle Projekte beschäftigen sich auf unterschiedliche Weise mit **Entscheidungen, Logik, Lernen und Nutzerführung**.
-
-Jedes Projekt wurde vollständig selbst umgesetzt – von der Idee über die Logik bis zur Umsetzung im Code.
-Sie zeigen meine Interessen an **Informatik**, **Problemlösung** und **praktischer Anwendung von Theorie**.
-
-
+Dieses Repository enthält **drei eigenständig entwickelte Projekte**.
 
 ## Enthaltene Projekte
 
@@ -75,29 +69,12 @@ Python, Arcade
 
 📁 Ordner: `Maze Spiel`
 
-
-
-## Warum diese Projekte zusammengehören
-
-Alle drei Projekte beschäftigen sich mit einer gemeinsamen Idee:
-
-> **Wie können Entscheidungen – von Menschen oder Maschinen – sinnvoll getroffen und verbessert werden?**
-
-* Der Studienwahl-Assistent unterstützt menschliche Entscheidungen
-* Der KI-Agent lernt aus Erfahrung
-* Das Spiel fordert logisches Denken und Planung
-
-Sie zeigen unterschiedliche Perspektiven auf Problemlösung, aber mit dem gleichen Anspruch:
-**verständlich, strukturiert und nachvollziehbar**.
-
-
 ## Persönliches Ziel
 
 Dieses Repository ist kein fertiges Produkt, sondern eine **Sammlung meines Lernwegs**.
 Es zeigt, wie ich mich mit neuen Themen auseinandersetze, Probleme analysiere und eigenständig Lösungen entwickle.
 
 Ich möchte meine Begeisterung für Informatik weiter vertiefen und sehe das CHECK24-Stipendium als große Chance, diesen Weg weiterzugehen.
-
 
 
 ## Hinweis

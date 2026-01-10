@@ -82,10 +82,6 @@ Die Antworten der Nutzer:innen werden mit diesen Profilen verglichen.
 * kleine Abweichungen wirken sich leicht aus
 * große Unterschiede senken die Bewertung deutlich
 
-So entsteht ein **nachvollziehbares und erklärbares Ergebnis**, das keine Blackbox ist.
-
-
-
 ## Projektstruktur
 
 ```
@@ -121,8 +117,7 @@ In Zukunft könnte das Projekt erweitert werden, zum Beispiel durch:
 
 ## Persönliche Anmerkung
 
-Dieses Projekt steht für meine Neugier, meinen Lernwillen und mein Interesse an Technik und sinnvollen Anwendungen.
-Es zeigt, wie ich versuche, reale Probleme mit Software zu lösen auch schon während meiner Schulzeit.
+Durch dieses Projekt ich habe etwas erreicht was viele Schüler und schülerinnen helfen kann eine Entscheidung zu treffen. Ich habe zum ersten Mal mit Flask gearbeitet und daraus richtig viel gelernt. In diesem Projekt war es mir sehr wichtig eine einfache UI für meine Nutzer zu machen und einen einfachen Bot zu machen der schnell einen Vorschlag macht. 
 
 
 

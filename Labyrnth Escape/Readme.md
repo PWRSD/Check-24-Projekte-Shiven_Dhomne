@@ -88,7 +88,4 @@ Besonders spannend war es zu sehen, wie aus einzelnen Ideen ein funktionierendes
 
 ## Persönliches Fazit
 
-Dieses Spiel ist kein großes kommerzielles Projekt, sondern ein Lernprojekt, auf das ich stolz bin.
-Es zeigt, wie ich arbeite, wie ich denke und wie ich mit neuen Herausforderungen umgehe.
-
-Für mich ist es ein weiterer Schritt, Programmieren nicht nur zu lernen, sondern wirklich anzuwenden.
+Mit diesem Projekt habe die Python Library Arcade genauer gelernt und ich bin sehr froh über das Ergebnis.
