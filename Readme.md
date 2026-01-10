@@ -1,26 +1,28 @@
+
 # CHECK24-Projekte – Shiven Dhomne
 
-*Sammlung eigener Softwareprojekte zur Studien- und Berufsorientierung*
+*Eigene Softwareprojekte zur Studien- und Berufsorientierung*
 
 ## Überblick
 
-Dieses Repository enthält **drei eigenständig entwickelte Projekte**.
+Dieses Repository enthält drei selbstständig entwickelte Projekte, die ich als Hobby programmiert habe.
+
 
 ## Enthaltene Projekte
 
 ### 1. Studienwahl-Assistent *(Hauptprojekt)*
 
-Ein interaktiver Web-Assistent, der Schüler:innen bei der Studienwahl unterstützt.
+Ein interaktiver Web-Assistent, der Schüler:innen bei der Entscheidung für ein Studium unterstützt.
 
 Der Nutzer beantwortet mehrere Fragen zu Interessen, Stärken und Erwartungen.
-Auf Basis dieser Antworten werden passende Studienrichtungen vorgeschlagen und verständlich begründet.
+Auf Grundlage dieser Antworten schlägt das System passende Studienrichtungen vor und erklärt nachvollziehbar, wie diese Empfehlung zustande kommt.
 
 **Schwerpunkte:**
 
 * Entscheidungslogik
 * Nutzerführung
-* Transparente Auswertung
-* Frontend- und Backend-Zusammenspiel
+* transparente und verständliche Auswertung
+* Zusammenspiel von Frontend und Backend
 
 **Technik:**
 Python (Flask), HTML, CSS, JavaScript
@@ -28,14 +30,12 @@ Python (Flask), HTML, CSS, JavaScript
 📁 Ordner: `Studienwahl Assistent (Hauptprojekt)`
 
 
+### 2. Taxi-Problem – Reinforcement-Learning-KI-Agent *(Hauptprojekt)*
 
-### 2. Taxi-Problem – Reinforcement Learning KI-Agent *(Hauptprojekt)*
+Ein Lernprojekt aus dem Bereich **Künstliche Intelligenz**, bei dem ein Taxi-Agent durch Ausprobieren lernt, einen Passagier sicher an sein Ziel zu bringen.
 
-Ein Lernprojekt aus dem Bereich **Künstliche Intelligenz**.
-Ein Taxi-Agent lernt durch Ausprobieren, einen Passagier sicher an sein Ziel zu bringen.
-
-Das Verhalten des Agenten wird über eine grafische Oberfläche sichtbar gemacht.
-Dabei wird bewusst gezeigt, dass Lernen Zeit braucht und Fehler dazugehören.
+Das Lernverhalten des Agenten wird über eine grafische Oberfläche sichtbar gemacht.
+Dabei wird bewusst gezeigt, dass Lernprozesse nicht sofort perfekt sind und Fehler ein wichtiger Teil des Lernens bleiben.
 
 **Schwerpunkte:**
 
@@ -50,38 +50,37 @@ Python, Gymnasium, NumPy, Tkinter
 📁 Ordner: `Taxi Problem Reinforcement Learning KI-Agent (Hauptprojekt)`
 
 
-
 ### 3. Labyrinth Escape *(Spielprojekt)*
 
-Ein selbst programmiertes Labyrinth-Spiel, bei dem der Spieler Hindernissen ausweichen, Münzen sammeln und das Ziel erreichen muss.
+Ein selbst programmiertes Labyrinth-Spiel, bei dem der Spieler Hindernissen ausweichen, Münzen sammeln und schließlich das Ziel erreichen muss.
 
-Das Projekt verbindet **logisches Denken**, **Spielmechaniken** und **saubere Struktur im Code**.
+Das Projekt verbindet **logisches Denken**, **klassische Spielmechaniken** und eine **klare, saubere Code-Struktur**.
 
 **Schwerpunkte:**
 
 * Spielzustände
 * Kollisionserkennung
 * Nutzerinteraktion
-* saubere Programmstruktur
+* strukturierter und verständlicher Code
 
 **Technik:**
 Python, Arcade
 
 📁 Ordner: `Maze Spiel`
 
+
 ## Persönliches Ziel
+In diesem Projekt habe ich zum ersten Mal die Prozesse hinter einem Ki-Agenten kennengelernt. Dieses Projekt war sehr herausfordernd, da es sehr viel mathematisches Denken forderte. Trotz dessen war es ein sehr interessantes Projekt.
 
-Dieses Repository ist kein fertiges Produkt, sondern eine **Sammlung meines Lernwegs**.
-Es zeigt, wie ich mich mit neuen Themen auseinandersetze, Probleme analysiere und eigenständig Lösungen entwickle.
-
-Ich möchte meine Begeisterung für Informatik weiter vertiefen und sehe das CHECK24-Stipendium als große Chance, diesen Weg weiterzugehen.
 
 
 ## Hinweis
 
 Jedes Projekt enthält ein eigenes `README.md` mit:
 
-* genauer Erklärung
-* Motivation
-* Funktionsweise
+* einer genauen Erklärung
+* der jeweiligen Motivation
+* der Funktionsweise
 * persönlichen Lernzielen
+
+
