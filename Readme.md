@@ -71,7 +71,9 @@ Das Projekt verbindet **logisches Denken**, **klassische Spielmechaniken** und e
 Python, Arcade
 
 📁 Ordner: `Maze Spiel`
+<br>
 <img src = "./pictures/Spiel.png">
+
 
 
 
