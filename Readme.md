@@ -29,6 +29,9 @@ Python (Flask), HTML, CSS, JavaScript
 
 📁 Ordner: `Studienwahl Assistent (Hauptprojekt)`
 
+<img src = "./pictures/Bot_W.png">
+<img src = "./pictures/Bot_Q.png">
+
 
 ### 2. Taxi-Problem – Reinforcement-Learning-KI-Agent 
 
@@ -48,6 +51,8 @@ Dabei wird bewusst gezeigt, dass Lernprozesse nicht sofort perfekt sind und Fehl
 Python, Gymnasium, NumPy, Tkinter
 
 📁 Ordner: `Taxi Problem Reinforcement Learning KI-Agent (Hauptprojekt)`
+<img src = "./pictures/taxi.png">
+
 
 
 ### 3. Labyrinth Escape 
@@ -66,6 +71,8 @@ Das Projekt verbindet **logisches Denken**, **klassische Spielmechaniken** und e
 Python, Arcade
 
 📁 Ordner: `Maze Spiel`
+<img src = "./pictures/Spiel.png">
+
 
 
 ## Persönliches Ziel
