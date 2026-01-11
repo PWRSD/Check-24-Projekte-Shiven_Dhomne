@@ -24,6 +24,8 @@ Ich wollte ein Tool entwickeln, das:
 Dieses Projekt ist aus persönlichem Interesse entstanden, da ich mich selbst mit der Frage beschäftige, welcher Studienweg zu mir passt.
 
 
+## Bedienung 
+Einfach nur Backend.py laufen lassen und man wird zu der Webseite geleitet.
 
 ## Funktionsweise
 
